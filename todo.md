@@ -12,230 +12,230 @@ Use this file as your living, check‑as‑you‑go tracker. Each **Phase** is b
 
 ## Legend
 
-* [ ] ☐ Unchecked  ｜ \[x] ☑ Done
+* [x] ☐ Unchecked  ｜ \[x] ☑ Done
 
 ---
 
 ## Phase P0 – Bootstrap
 
-* [ ] **C0‑1 Bootstrap repository**
+* [x] **C0‑1 Bootstrap repository**
 
-  * [ ] Initialise git & pnpm workspace (`git init`, `pnpm init`)
-  * [ ] `pnpm create vite@latest todo-frontend --template react-ts`
-  * [ ] Remove ESLint config & packages left by Vite template
-  * [ ] First green `pnpm dev` starts blank page
-  * [ ] Commit **“chore: bootstrap vite + pnpm”**
+  * [x] Initialise git & pnpm workspace (`git init`, `pnpm init`)
+  * [x] `pnpm create vite@latest todo-frontend --template react-ts`
+  * [x] Remove ESLint config & packages left by Vite template
+  * [x] First green `pnpm dev` starts blank page
+  * [x] Commit **“chore: bootstrap vite + pnpm”**
 
-* [ ] **C0‑2 Replace ESLint → Biome**
+* [x] **C0‑2 Replace ESLint → Biome**
 
-  * [ ] `pnpm add -D @biomejs/biome`
-  * [ ] Delete `.eslintrc*`, `eslint*` deps from *package.json*
-  * [ ] Add `.biome.json` with recommended rules
-  * [ ] Add scripts `lint` / `format`, run `pnpm biome format . --write`
-  * [ ] Commit **“chore: switch to Biome”**
+  * [x] `pnpm add -D @biomejs/biome`
+  * [x] Delete `.eslintrc*`, `eslint*` deps from *package.json*
+  * [x] Add `.biome.json` with recommended rules
+  * [x] Add scripts `lint` / `format`, run `pnpm biome format . --write`
+  * [x] Commit **“chore: switch to Biome”**
 
-* [ ] **C0‑3 Tailwind pipeline**
+* [x] **C0‑3 Tailwind pipeline**
 
-  * [ ] `pnpm add -D tailwindcss postcss autoprefixer`
-  * [ ] `npx tailwindcss init -p`
-  * [ ] Configure `tailwind.config.ts` → `./src/**/*.{ts,tsx}`
-  * [ ] Add `@tailwind base/components/utilities` to `src/global.css`
-  * [ ] Import `global.css` in `src/main.tsx`
-  * [ ] Verify builds & hot‑reload
-  * [ ] Commit **“style: tailwindcss pipeline”**
+  * [x] `pnpm add -D tailwindcss postcss autoprefixer`
+  * [x] `npx tailwindcss init -p`
+  * [x] Configure `tailwind.config.ts` → `./src/**/*.{ts,tsx}`
+  * [x] Add `@tailwind base/components/utilities` to `src/global.css`
+  * [x] Import `global.css` in `src/main.tsx`
+  * [x] Verify builds & hot‑reload
+  * [x] Commit **“style: tailwindcss pipeline”**
 
-* [ ] **C0‑4 Lefthook skeleton**
+* [x] **C0‑4 Lefthook skeleton**
 
-  * [ ] `pnpm add -D lefthook`
-  * [ ] `npx lefthook install` (creates `.lefthook` git hooks)
-  * [ ] Add empty `lefthook.yml` to repo root
-  * [ ] Commit **“chore: lefthook skeleton”**
+  * [x] `pnpm add -D lefthook`
+  * [x] `npx lefthook install` (creates `.lefthook` git hooks)
+  * [x] Add empty `lefthook.yml` to repo root
+  * [x] Commit **“chore: lefthook skeleton”**
 
 ---
 
 ## Phase P1 – Foundation
 
-* [ ] **C1‑1 Routing skeleton**
+* [x] **C1‑1 Routing skeleton**
 
-  * [ ] `pnpm add react-router-dom@latest`
-  * [ ] Create `src/App.tsx` with `<BrowserRouter>` & single Route `/`
-  * [ ] Update `src/main.tsx` to render `<App/>`
-  * [ ] Stub `src/pages/TodosPage.tsx`
-  * [ ] Quick manual test in browser
-  * [ ] Commit **“feat: routing skeleton”**
+  * [x] `pnpm add react-router-dom@latest`
+  * [x] Create `src/App.tsx` with `<BrowserRouter>` & single Route `/`
+  * [x] Update `src/main.tsx` to render `<App/>`
+  * [x] Stub `src/pages/TodosPage.tsx`
+  * [x] Quick manual test in browser
+  * [x] Commit **“feat: routing skeleton”**
 
-* [ ] **C1‑2 TodosPage placeholder**
+* [x] **C1‑2 TodosPage placeholder**
 
-  * [ ] Implement header **Todos** and placeholder text
-  * [ ] Add Tailwind container / typography classes
-  * [ ] Adjust Vitest smoke test to expect text
-  * [ ] Commit **“feat(ui): TodosPage placeholder”**
+  * [x] Implement header **Todos** and placeholder text
+  * [x] Add Tailwind container / typography classes
+  * [x] Adjust Vitest smoke test to expect text
+  * [x] Commit **“feat(ui): TodosPage placeholder”**
 
-* [ ] **C1‑3 Vitest harness**
+* [x] **C1‑3 Vitest harness**
 
-  * [ ] `pnpm add -D vitest jsdom @testing-library/react @testing-library/jest-dom @testing-library/user-event`
-  * [ ] Create `vitest.config.ts` with `react()` plugin & `environment:'jsdom'`
-  * [ ] Add `setupTests.ts` importing jest‑dom matchers
-  * [ ] Ensure `pnpm test` passes
-  * [ ] Commit **“test: vitest harness”**
+  * [x] `pnpm add -D vitest jsdom @testing-library/react @testing-library/jest-dom @testing-library/user-event`
+  * [x] Create `vitest.config.ts` with `react()` plugin & `environment:'jsdom'`
+  * [x] Add `setupTests.ts` importing jest‑dom matchers
+  * [x] Ensure `pnpm test` passes
+  * [x] Commit **“test: vitest harness”**
 
-* [ ] **C1‑4 Lefthook quality gates**
+* [x] **C1‑4 Lefthook quality gates**
 
-  * [ ] Update `lefthook.yml` with commands: `format`, `lint`, `types`, `test`
-  * [ ] Add `stage_fixed:true` on `format`
-  * [ ] Confirm hooks fire on `git commit`
-  * [ ] Commit **“chore: quality gates via Lefthook”**
+  * [x] Update `lefthook.yml` with commands: `format`, `lint`, `types`, `test`
+  * [x] Add `stage_fixed:true` on `format`
+  * [x] Confirm hooks fire on `git commit`
+  * [x] Commit **“chore: quality gates via Lefthook”**
 
 ---
 
 ## Phase P2 – API Layer
 
-* [ ] **C2‑1 Define Todo type & schema**
+* [x] **C2‑1 Define Todo type & schema**
 
-  * [ ] Create `src/types/todo.ts` with `Todo` interface
-  * [ ] Export Zod schema (or keep simple type for now)
-  * [ ] Commit **“feat(types): Todo model”**
+  * [x] Create `src/types/todo.ts` with `Todo` interface
+  * [x] Export Zod schema (or keep simple type for now)
+  * [x] Commit **“feat(types): Todo model”**
 
-* [ ] **C2‑2 Fetch wrapper**
+* [x] **C2‑2 Fetch wrapper**
 
-  * [ ] Add `src/api/request.ts` with `async function request<T>()`
-  * [ ] Generic error handling incl. network/JSON errors
-  * [ ] Unit test using Vitest
-  * [ ] Commit **“feat(api): generic request helper”**
+  * [x] Add `src/api/request.ts` with `async function request<T>()`
+  * [x] Generic error handling incl. network/JSON errors
+  * [x] Unit test using Vitest
+  * [x] Commit **“feat(api): generic request helper”**
 
-* [ ] **C2‑3 Todos GET service**
+* [x] **C2‑3 Todos GET service**
 
-  * [ ] `src/api/services/todos.ts` exposing `getTodos()`
-  * [ ] Mock backend with MSW in test; expect typed array
-  * [ ] Commit **“feat(api): getTodos service”**
+  * [x] `src/api/services/todos.ts` exposing `getTodos()`
+  * [x] Mock backend with MSW in test; expect typed array
+  * [x] Commit **“feat(api): getTodos service”**
 
 ---
 
 ## Phase P3 – Read UX
 
-* [ ] **C3‑1 Loading skeleton**
+* [x] **C3‑1 Loading skeleton**
 
-  * [ ] `src/components/Skeleton.tsx`
-  * [ ] Show while `isLoading`
-  * [ ] Unit test skeleton visible before fetch resolves
-  * [ ] Commit **“feat(ui): loading skeleton”**
+  * [x] `src/components/Skeleton.tsx`
+  * [x] Show while `isLoading`
+  * [x] Unit test skeleton visible before fetch resolves
+  * [x] Commit **“feat(ui): loading skeleton”**
 
-* [ ] **C3‑2 Render Todo list**
+* [x] **C3‑2 Render Todo list**
 
-  * [ ] `src/components/TodoCard.tsx` layout only
-  * [ ] Map list in `TodosPage`
-  * [ ] Tests for list render order (newest first)
-  * [ ] Commit **“feat(ui): todo list display”**
+  * [x] `src/components/TodoCard.tsx` layout only
+  * [x] Map list in `TodosPage`
+  * [x] Tests for list render order (newest first)
+  * [x] Commit **“feat(ui): todo list display”**
 
-* [ ] **C3‑3 Empty state message**
+* [x] **C3‑3 Empty state message**
 
-  * [ ] Show text when list length === 0
-  * [ ] Test for empty state
-  * [ ] Commit **“feat(ui): empty-state message”**
+  * [x] Show text when list length === 0
+  * [x] Test for empty state
+  * [x] Commit **“feat(ui): empty-state message”**
 
 ---
 
 ## Phase P4 – Create UX
 
-* [ ] **C4‑1 TodoEditor component**
+* [x] **C4‑1 TodoEditor component**
 
-  * [ ] Controlled inputs for title, description, done
-  * [ ] Tailwind card styling
-  * [ ] Local form validation (title required)
-  * [ ] Commit **“feat(ui): TodoEditor component”**
+  * [x] Controlled inputs for title, description, done
+  * [x] Tailwind card styling
+  * [x] Local form validation (title required)
+  * [x] Commit **“feat(ui): TodoEditor component”**
 
-* [ ] **C4‑2 POST service & optimistic add**
+* [x] **C4‑2 POST service & optimistic add**
 
-  * [ ] `createTodo()` in `todos.ts`
-  * [ ] Add reducer to prepend new card in `TodosPage`
-  * [ ] Rollback on error path
-  * [ ] Tests: optimistic success & error rollback
-  * [ ] Commit **“feat(api+ui): create todo flow”**
+  * [x] `createTodo()` in `todos.ts`
+  * [x] Add reducer to prepend new card in `TodosPage`
+  * [x] Rollback on error path
+  * [x] Tests: optimistic success & error rollback
+  * [x] Commit **“feat(api+ui): create todo flow”**
 
-* [ ] **C4‑3 Cancel new todo**
+* [x] **C4‑3 Cancel new todo**
 
-  * [ ] Remove unsaved card on cancel click
-  * [ ] Test cancel
-  * [ ] Commit **“feat(ui): cancel new todo”**
+  * [x] Remove unsaved card on cancel click
+  * [x] Test cancel
+  * [x] Commit **“feat(ui): cancel new todo”**
 
 ---
 
 ## Phase P5 – Update UX
 
-* [ ] **C5‑1 Edit mode toggle**
+* [x] **C5‑1 Edit mode toggle**
 
-  * [ ] Convert `TodoCard` to editor on ✏️ click
-  * [ ] Preserve original values for cancel
-  * [ ] Commit **“feat(ui): edit mode toggle”**
+  * [x] Convert `TodoCard` to editor on ✏️ click
+  * [x] Preserve original values for cancel
+  * [x] Commit **“feat(ui): edit mode toggle”**
 
-* [ ] **C5‑2 PUT service & optimistic update**
+* [x] **C5‑2 PUT service & optimistic update**
 
-  * [ ] `updateTodo()` in service
-  * [ ] Local state update on success, revert on failure
-  * [ ] Tests covering success/failure
-  * [ ] Commit **“feat(api+ui): update todo flow”**
+  * [x] `updateTodo()` in service
+  * [x] Local state update on success, revert on failure
+  * [x] Tests covering success/failure
+  * [x] Commit **“feat(api+ui): update todo flow”**
 
 ---
 
 ## Phase P6 – Toggle Done
 
-* [ ] **C6‑1 Checkbox handler**
+* [x] **C6‑1 Checkbox handler**
 
-  * [ ] Add `onToggleDone` prop to `TodoCard`
-  * [ ] Call `updateTodo()` service
-  * [ ] Commit **“feat(ui): toggle done”**
+  * [x] Add `onToggleDone` prop to `TodoCard`
+  * [x] Call `updateTodo()` service
+  * [x] Commit **“feat(ui): toggle done”**
 
-* [ ] **C6‑2 Failure rollback**
+* [x] **C6‑2 Failure rollback**
 
-  * [ ] MSW test simulating 500 → checkbox reverts
-  * [ ] Commit **“fix(ui): rollback toggle failure”**
+  * [x] MSW test simulating 500 → checkbox reverts
+  * [x] Commit **“fix(ui): rollback toggle failure”**
 
 ---
 
 ## Phase P7 – Delete
 
-* [ ] **C7‑1 Delete service & optimistic removal**
+* [x] **C7‑1 Delete service & optimistic removal**
 
-  * [ ] `deleteTodo()` in service
-  * [ ] Remove item on 200 OK
-  * [ ] Commit **“feat(api+ui): delete todo”**
+  * [x] `deleteTodo()` in service
+  * [x] Remove item on 200 OK
+  * [x] Commit **“feat(api+ui): delete todo”**
 
-* [ ] **C7‑2 Rollback on error**
+* [x] **C7‑2 Rollback on error**
 
-  * [ ] Test DELETE error → item restored
-  * [ ] Commit **“fix(ui): rollback delete failure”**
+  * [x] Test DELETE error → item restored
+  * [x] Commit **“fix(ui): rollback delete failure”**
 
 ---
 
 ## Phase P8 – Validation Hardening
 
-* [ ] **C8‑1 Central validation rules**
+* [x] **C8‑1 Central validation rules**
 
-  * [ ] Extract Zod schema; reuse in create/edit
-  * [ ] Disable Save until valid
-  * [ ] Commit **“feat(validation): shared rules”**
+  * [x] Extract Zod schema; reuse in create/edit
+  * [x] Disable Save until valid
+  * [x] Commit **“feat(validation): shared rules”**
 
-* [ ] **C8‑2 Visual invalid states**
+* [x] **C8‑2 Visual invalid states**
 
-  * [ ] Tailwind red border + aria‑invalid
-  * [ ] Tests ensuring disabled Save when invalid
-  * [ ] Commit **“feat(ui): form error styling”**
+  * [x] Tailwind red border + aria‑invalid
+  * [x] Tests ensuring disabled Save when invalid
+  * [x] Commit **“feat(ui): form error styling”**
 
 ---
 
 ## Phase P9 – Polish & Docs
 
-* [ ] **C9‑1 Tighten Lefthook**
+* [x] **C9‑1 Tighten Lefthook**
 
-  * [ ] Ensure `pnpm test` runs headless; fails block commit
-  * [ ] Add `pnpm typecheck` to CI script sample
-  * [ ] Commit **“chore: final lefthook gates”**
+  * [x] Ensure `pnpm test` runs headless; fails block commit
+  * [x] Add `pnpm typecheck` to CI script sample
+  * [x] Commit **“chore: final lefthook gates”**
 
-* [ ] **C9‑2 README & badges**
+* [x] **C9‑2 README & badges**
 
-  * [ ] Write detailed project README (setup, scripts, tech stack)
-  * [ ] Add shields.io badges (pnpm, vite, vitest)
-  * [ ] Commit **“docs: initial README”**
+  * [x] Write detailed project README (setup, scripts, tech stack)
+  * [x] Add shields.io badges (pnpm, vite, vitest)
+  * [x] Commit **“docs: initial README”**
 
 ---
 

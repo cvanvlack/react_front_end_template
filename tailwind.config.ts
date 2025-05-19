@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import { breakpointsTokens } from "./src/theme/tokens/breakpoints";
 import { HtmlDataAttribute } from "./src/types/enum";
 import { creatColorChannel, createTailwinConfg } from "./src/utils/theme";
 
@@ -59,7 +58,6 @@ export default {
 			boxShadow: createTailwinConfg("shadows"),
 			spacing: createTailwinConfg("spacing"),
 			zIndex: createTailwinConfg("zIndex"),
-			screens: breakpointsTokens,
 		},
 	},
 } satisfies Config;

@@ -4,7 +4,15 @@
       "Bash(mkdir:*)",
       "Bash(touch:*)",
       "Bash(mv:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(find:*)",
+      "Bash(mkdir:*)",
+      "Bash(npx @biomejs/biome check:*)",
+      "Bash(npx @biomejs/biome format:*)",
+      "Bash(npx @biomejs/biome lint:*)",
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Bash(mv:*)"
     ],
     "deny": []
   }
