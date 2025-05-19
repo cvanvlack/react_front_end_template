@@ -1,0 +1,18 @@
+{
+  "output": {
+    "style": "xml",
+    "filePath": "repomix-output.xml",
+
+    "topFilesLength": 10
+  },
+  "ignore": {
+    "customPatterns": [
+      ".claude/**",
+      ".cursor/**",
+      ".github/**",
+      ".repomix/**",
+      ".gitignore",
+      "repomix.config.json"
+    ]
+  }
+}
