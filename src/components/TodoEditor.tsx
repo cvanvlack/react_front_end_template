@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { type Todo, TodoSchema } from "../types/todo";
+import type { Todo } from "../types/todo";
 
 type TodoEditorProps = {
 	todo?: Todo;

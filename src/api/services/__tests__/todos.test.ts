@@ -1,6 +1,6 @@
 import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
-import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
+import { afterAll, afterEach, beforeAll, describe, expect, it } from "vitest";
 import type { Todo } from "../../../types/todo";
 import { createTodo, deleteTodo, getTodos, updateTodo } from "../todos";
 
@@ -25,12 +25,12 @@ const server = setupServer(
 		return HttpResponse.json(mockTodos);
 	}),
 	http.post("/api/todos/", async ({ request }) => {
-		const newTodo = await request.json();
+		const newTodo = (await request.json()) as Omit<Todo, "id">;
 		return HttpResponse.json({ id: "3", ...newTodo });
 	}),
 	http.put("/api/todos/:id", async ({ params, request }) => {
-		const { id } = params;
-		const updates = await request.json();
+		const id = params.id;
+		const updates = (await request.json()) as Partial<Todo>;
 		const todo = mockTodos.find((t) => t.id === id);
 
 		if (!todo) {
@@ -40,7 +40,7 @@ const server = setupServer(
 		return HttpResponse.json({ ...todo, ...updates });
 	}),
 	http.delete("/api/todos/:id", ({ params }) => {
-		const { id } = params;
+		const id = params.id;
 		const todoExists = mockTodos.some((t) => t.id === id);
 
 		if (!todoExists) {

@@ -99,7 +99,6 @@ export default function TodosPage() {
 		try {
 			// Store for potential rollback
 			const deletedTodo = todos.find((todo) => todo.id === id);
-			const deletedTodoIndex = todos.findIndex((todo) => todo.id === id);
 
 			if (!deletedTodo) return;
 
